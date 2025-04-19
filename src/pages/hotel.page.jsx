@@ -16,9 +16,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { BookingDialog } from "@/components/BookingDialog";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
+
+
 export default function HotelPage() {
   const { id } = useParams();
   const { data: hotel, isLoading, isError, error } = useGetHotelByIdQuery(id);
+  //const { data: dhotel } = usedeleteHotelQuery(id);
 
   const [createBooking, { isLoading: isCreateBookingLoading }
   ] = useCreateBookingMutation();

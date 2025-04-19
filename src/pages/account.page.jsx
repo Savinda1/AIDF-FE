@@ -1,7 +1,11 @@
 import { SignedIn, useUser } from "@clerk/clerk-react";
 import { Navigate } from "react-router";
+import { useGetBookingsQuery } from "@/lib/api/api";
+import MyBooking from "@/components/MyBooking";
 
 const AccountPage = () => {
+  const { data: bookings, isLoading, isError, error } = useGetBookingsQuery();
+
   const { isLoaded, isSignedIn, user } = useUser();
 
   if (!isSignedIn) {
@@ -26,6 +30,11 @@ const AccountPage = () => {
           </div>
         </div>
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-2">
+      {bookings?.map((booking) => (
+  <MyBooking  key={booking._id} booking={booking} />
+))}
+ </div>
     </main>
   );
 };

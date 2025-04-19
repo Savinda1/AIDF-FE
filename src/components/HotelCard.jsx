@@ -1,7 +1,7 @@
 import React from "react";
 import { MapPin, Star } from "lucide-react";
 import { Link } from "react-router";
-//import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 //import { useState } from "react";
 
 function HotelCard(props) {
@@ -33,7 +33,7 @@ function HotelCard(props) {
                 </div>
                 <div className="flex items-baseline space-x-2">
                     <span className="text-xl font-bold">${props.hotel.price}</span>
-                </div>
+                    </div>
             </div>
 
            

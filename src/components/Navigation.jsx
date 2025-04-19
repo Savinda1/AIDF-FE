@@ -22,6 +22,9 @@ function Navigation() {
           {user?.publicMetadata?.role === "admin" && <Link to={`/hotels/create`} className="transition-colors text-2xl">
            Create Hotel
           </Link>}
+          <Link to={`/hotels`} className="transition-colors text-2xl">
+            Hotels
+          </Link>
         </div> 
     </div>
 

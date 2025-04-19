@@ -34,9 +34,9 @@ createRoot(document.getElementById('root')).render(
            <Route element={<RootLayout />}>
            <Route element={<MainLayout />}>
              <Route path="/" element={<HomePage />} />
-         <Route path="/hotel/:id" element={<HotelPage />} />
-           <Route path="/hotels" element={<HotelsPage />} />
+        <Route path="/hotels" element={<HotelsPage />} />
            <Route element={<ProtectedLayout />}>
+           <Route path="/hotel/:id" element={<HotelPage />} />
            <Route path="/account" element={<AccountPage />} />
            <Route element={<AdminProtectedLayout />}>
            <Route path="/hotels/create" element={<CreateHotels />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import HotelCard from "./HotelCard";
+import DeleteHotelCard from "./DeleteHotelCard";
 import LocationTab from "./LocationTab";
 import { useState, useEffect } from "react";
 import { useGetHotelsQuery } from "@/lib/api/api";
@@ -38,7 +39,7 @@ const filteredHotels =
 
       <div className="mb-5">
         <h2 className="text-3xl md:text-4xl font-bold mb-10">
-          Top trending hotels worldwide
+           Top trending hotels worldwide
         </h2>
 
        
@@ -65,7 +66,9 @@ const filteredHotels =
 
         {filteredHotels .filter((hotel) => hotel && hotel._id)
         .map((hotel,confidence) =>{
-            return (<HotelCard key={hotel._id} hotel={hotel}  confidence={confidence}/>)
+            return (<HotelCard key={hotel._id} hotel={hotel}  confidence={confidence}/>
+             
+            )
           })}
       </div>  )}
 
