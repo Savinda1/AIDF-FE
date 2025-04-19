@@ -20,8 +20,8 @@ const formSchema = z.object({
   name: z.string().min(1, { message: "Hotel name is required" }),
   location: z.string().min(1),
   image: z.string().min(1),
-  //price: z.number(),
-  price: z.union([z.string(), z.number()]).transform((value) => value.toString()),
+  price: z.number(),
+  //price: z.union([z.string(), z.number()]).transform((value) => value.toString()),
   description: z.string().min(1),
 });
 
