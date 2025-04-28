@@ -65,6 +65,15 @@ export const api = createApi({
         method: "DELETE",
       }),
     }),
+    getCheckoutSessionStatus: builder.query({
+      query: (sessionId) => `payments/session-status?session_id=${sessionId}`,
+    }),
+  
+    getBookingById: builder.query({
+      query: (id) => `bookings/${id}`,
+    }),
+
+    
       }),
       
     })
@@ -79,5 +88,7 @@ export const {
     useUpdateHotelMutation,
     useGetBookingsQuery,
      useGetHotelsForSearchQueryQuery,
-     useDeleteBookingMutation
+     useDeleteBookingMutation,
+     useGetCheckoutSessionStatusQuery,
+     useGetBookingByIdQuery,
      } =api;

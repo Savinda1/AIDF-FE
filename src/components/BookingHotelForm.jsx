@@ -13,7 +13,7 @@ import {
 import { DatePicker } from "./DatePicker";
 import { addDays } from "date-fns";
 import { toast } from "sonner";
-import {  useCreateBookingMutation } from "@/lib/api/api";
+//import {  useCreateBookingMutation } from "@/lib/api/api";
 
 const formSchema = z.object({
   checkIn: z.date({
@@ -27,8 +27,8 @@ const formSchema = z.object({
   path: ["checkOut"],
 });
 
-export default function BookingForm () {
-    const [onSubmit, { isLoading }] =  useCreateBookingMutation();
+export default function BookingForm ({ onSubmit, isLoading, hotelId }) {
+   // const [onSubmit, { isLoading }] =  useCreateBookingMutation();
  const tomorrow = addDays(new Date(), 1);
   
   
@@ -40,16 +40,10 @@ export default function BookingForm () {
     },
   });
 const handleSubmit = async(values) => {
-   const {checkIn,checkOut } = values;
-   try {
-      await onSubmit({
-        checkIn,
-        checkOut,
-      }).unwrap();
-      toast.success("Hotel created successfully");
-    } catch (error) {
-        toast.error("Hotel creation failed");
-    }
+  onSubmit({
+    ...values,
+    hotelId,
+  });
   };
 
 

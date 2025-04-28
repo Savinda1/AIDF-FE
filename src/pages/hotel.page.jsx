@@ -16,35 +16,29 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { BookingDialog } from "@/components/BookingDialog";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
+import { useAuth } from "@clerk/clerk-react";
 
 
 export default function HotelPage() {
   const { id } = useParams();
   const { data: hotel, isLoading, isError, error } = useGetHotelByIdQuery(id);
-  //const { data: dhotel } = usedeleteHotelQuery(id);
+  const { getToken } = useAuth();
+  const [createBooking, { isLoading: isCreateBookingLoading }] =useCreateBookingMutation();
+const navigate = useNavigate();
 
-  const [createBooking, { isLoading: isCreateBookingLoading }
-  ] = useCreateBookingMutation();
+const handleBook = async (bookingData) => {
+  try {
+    const booking = await createBooking(bookingData).unwrap();
 
-  /*const [createBooking, { isLoading: isCreateBookingLoading }] =
-  useCreateBookingMutation();*/
+navigate(`/booking/payment?bookingId=${bookingData._id}`);
 
-
-  const navigate = useNavigate();
-
-  const handleBook = async () => {
-    try {
-      await createBooking({
-        hotelId: id,
-        checkIn: new Date(),
-        checkout: new Date(),
-        roomNumber: 200
-      })
-    } catch (error) {
-      console.log(error);
-    }
+    toast.success("Booking successful");
+  } catch (error) {
+    console.log(error);
+    toast.error("Booking failed");
+    };
   }
-
+    
 
   if (isLoading)
     return (
@@ -176,82 +170,6 @@ export default function HotelPage() {
         </div>
       </div>
     </div>
-  );
-}
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React from 'react'
-import { useParams } from 'react-router';
-import { useGetHotelByIdQuery } from '../lib/api/api';
-
-function HotelPage() {
-  const { id } = useParams();
-  const { data:hotel, error, isLoading } = useGetHotelByIdQuery(id);
-  //console.log(hotel);
-  return (
-    <main>
-      <h1 classname="font-bold">Hotel Page</h1>
-      <div>
-        {hotel ? <h2>{hotel.name}</h2> : <div>No hotel data available</div>}
-      </div>
-    </main>
-  )
-}
-
-export default HotelPage;*/
+ ); }
