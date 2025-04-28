@@ -42,6 +42,8 @@ const CheckoutForm = ({ bookingId }) => {
       }
 
       const data = await res.json();
+
+      
       return data.clientSecret;
     } catch (err) {
       setError(err.message);

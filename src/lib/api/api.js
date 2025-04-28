@@ -12,7 +12,7 @@ export const api = createApi({
 
     prepareHeaders: async (headers, { getState }) => {
     const token = await window?.Clerk?.session?.getToken();
-    console.log(token);
+    //console.log(token);
     if (token) {
       headers.set('Authorization', `Bearer ${token}`);
     }

@@ -30,7 +30,7 @@ const handleBook = async (bookingData) => {
   try {
     const booking = await createBooking(bookingData).unwrap();
 
-navigate(`/booking/payment?bookingId=${bookingData._id}`);
+navigate(`/account`);
 
     toast.success("Booking successful");
   } catch (error) {

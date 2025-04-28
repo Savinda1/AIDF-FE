@@ -35,12 +35,12 @@ createRoot(document.getElementById('root')).render(
            <Route element={<RootLayout />}>
            <Route element={<MainLayout />}>
              <Route path="/" element={<HomePage />} />
-        <Route path="/hotels" element={<HotelsPage />} />
         <Route path="/booking/payment" element={<PaymentPage />} />
            <Route element={<ProtectedLayout />}>
            <Route path="/hotel/:id" element={<HotelPage />} />
            <Route path="/account" element={<AccountPage />} />
            <Route element={<AdminProtectedLayout />}>
+           <Route path="/hotels" element={<HotelsPage />} />
            <Route path="/hotels/create" element={<CreateHotels />} />
           </Route>
           </Route>
@@ -49,7 +49,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/sign-up" element={< SignUpPage />} />
        </Route>
       </Routes>
-      </BrowserRouter>
+</BrowserRouter>
       </Provider>
     </ClerkProvider>
     </StrictMode>
