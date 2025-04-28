@@ -45,7 +45,7 @@ style={{ width: "20px", height: "20px" }}
 className=" mr-2 animate-pulse text-sky-400"
    />
 
-<span className='lg:text-lg'> Search</span>
+<span className='lg:text-lg'>AI Search</span>
 
 </Button>
 </form>
