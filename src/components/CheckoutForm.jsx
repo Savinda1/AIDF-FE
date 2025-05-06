@@ -10,20 +10,25 @@ import { useAuth } from "@clerk/clerk-react";
 
 const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
 const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
-
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
+console.log("SPK passed to CheckoutForm:", STRIPE_PUBLISHABLE_KEY);
+console.log("bu passed to CheckoutForm:", BACKEND_URL);
+
+
 const CheckoutForm = ({ bookingId }) => {
+ 
   const [error, setError] = useState(null);
   const { getToken } = useAuth();
-
+ 
   const fetchClientSecret = useCallback(async () => {
     try {
       const token = await getToken();
-      if (!token) {
+
+if (!token) {
         throw new Error("Authentication token not available");
       }
-
+     
       const res = await fetch(
         `${BACKEND_URL}/api/payments/create-checkout-session`,
         {
@@ -35,6 +40,7 @@ const CheckoutForm = ({ bookingId }) => {
           body: JSON.stringify({ bookingId }),
         }
       );
+     
 
       if (!res.ok) {
         const errorData = await res.json();

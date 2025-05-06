@@ -39,6 +39,7 @@ export default function BookingForm ({ onSubmit, isLoading, hotelId }) {
       checkOut: tomorrow,
     },
   });
+  //data yawanawa
 const handleSubmit = async(values) => {
   onSubmit({
     ...values,

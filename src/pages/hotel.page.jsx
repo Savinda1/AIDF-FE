@@ -22,15 +22,19 @@ import { useAuth } from "@clerk/clerk-react";
 export default function HotelPage() {
   const { id } = useParams();
   const { data: hotel, isLoading, isError, error } = useGetHotelByIdQuery(id);
-  const { getToken } = useAuth();
-  const [createBooking, { isLoading: isCreateBookingLoading }] =useCreateBookingMutation();
+  const [createBooking, { isLoading: isCreateBookingLoading }] =
+  useCreateBookingMutation();
+
 const navigate = useNavigate();
 
 const handleBook = async (bookingData) => {
   try {
     const booking = await createBooking(bookingData).unwrap();
 
-navigate(`/account`);
+    if (!booking?.id) {
+      throw new Error("Invalid booking response");
+    }
+ navigate(`/booking/payment?bookingId=${booking.id}`);
 
     toast.success("Booking successful");
   } catch (error) {
