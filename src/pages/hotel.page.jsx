@@ -10,7 +10,7 @@ import {
   Tv,
   Wifi,
 } from "lucide-react";
-
+import { useState } from "react";
 import { useParams } from "react-router";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BookingDialog } from "@/components/BookingDialog";
@@ -20,6 +20,10 @@ import { useAuth } from "@clerk/clerk-react";
 
 
 export default function HotelPage() {
+  const [num, setNum] = useState(0);
+  const handleClick = (e) => {
+    setNum(num + 1);}
+
   const { id } = useParams();
   const { data: hotel, isLoading, isError, error } = useGetHotelByIdQuery(id);
   const [createBooking, { isLoading: isCreateBookingLoading }] =
@@ -123,7 +127,7 @@ const handleBook = async (bookingData) => {
                 <p className="text-muted-foreground">{hotel.location}</p>
               </div>
             </div>
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" onClick={handleClick}>
               <Star className="h-4 w-4" />
               <span className="sr-only">Add to favorites</span>
             </Button>
@@ -132,7 +136,8 @@ const handleBook = async (bookingData) => {
             <Star className="h-5 w-5 fill-primary text-primary" />
             <span className="font-bold">{hotel.rating}</span>
             <span className="text-muted-foreground">
-            ({hotel?.reviews?.toLocaleString() ?? "No"} reviews)
+          { /* ({hotel?.reviews?.toLocaleString() ?? "No"} reviews)*/}
+          ({num} reviews)
             </span>
           </div>
           <p className="text-muted-foreground">{hotel.description}</p>
