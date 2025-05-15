@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-//const BACKEND_URL = "http://localhost:8000";
+//const BACKEND_URL = "http://localhost:8000"; VITE_BACKEND_URL=https://aidf-horizone-backend-amila.vercel.app
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL; 
 
 
 export const api = createApi({
@@ -52,7 +53,7 @@ export const api = createApi({
       query: (booking) => ({
         url: "bookings",
         method: "POST",
-        body: booking,//bpdy eka danne form wage body ekak thiyenawanm vithary
+        body: booking,//body eka danne form wage body ekak thiyenawanm vithary
       }),
     }),getBookings: builder.query({
       query: () => "bookings", 

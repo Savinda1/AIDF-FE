@@ -12,6 +12,7 @@ function CompletePage() {
 
   const { data, isLoading, isError } =
     useGetCheckoutSessionStatusQuery(sessionId);
+   console.log("💳 Payment Data:", data);
 
   if (isLoading) {
     return (

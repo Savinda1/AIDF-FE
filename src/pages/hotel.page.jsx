@@ -25,7 +25,9 @@ export default function HotelPage() {
     setNum(num + 1);}
 
   const { id } = useParams();
+
   const { data: hotel, isLoading, isError, error } = useGetHotelByIdQuery(id);
+  
   const [createBooking, { isLoading: isCreateBookingLoading }] =
   useCreateBookingMutation();
 

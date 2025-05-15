@@ -30,8 +30,7 @@ const formSchema = z.object({
 export default function BookingForm ({ onSubmit, isLoading, hotelId }) {
    // const [onSubmit, { isLoading }] =  useCreateBookingMutation();
  const tomorrow = addDays(new Date(), 1);
-  
-  
+ 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {

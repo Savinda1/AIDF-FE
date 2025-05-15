@@ -7,9 +7,13 @@ import { useGetHotelsQuery } from "@/lib/api/api";
 //import  {getHotels}  from '@/lib/api/hotels';
 //import { useSelector,useDispatch } from "react-redux";
 import { useGetHotelsForSearchQueryQuery } from "@/lib/api/api";
+
 import { useSelector } from "react-redux";
+
 export default  function HotelListings() {
+
   const searchValue = useSelector((state) => state.search.value);
+
   const { data,isLoading, isError, error } = useGetHotelsForSearchQueryQuery({
     query: searchValue,
   });
