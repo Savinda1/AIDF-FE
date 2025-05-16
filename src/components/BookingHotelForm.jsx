@@ -10,8 +10,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { DatePicker } from "./DatePicker";
 import { addDays } from "date-fns";
+import { Input } from "@/components/ui/input";
+
 import { toast } from "sonner";
 //import {  useCreateBookingMutation } from "@/lib/api/api";
 
@@ -56,8 +57,14 @@ const handleSubmit = async(values) => {
           render={({ field }) => (
             <FormItem className="flex flex-col">
               <FormLabel>Check-in Date</FormLabel>
-              <DatePicker field={field} />
-              <FormMessage />
+              <Input
+  type="date"
+  placeholder="Check-in Date"
+  value={field.value?.toISOString().split("T")[0] || ""}
+  onChange={(e) => field.onChange(new Date(e.target.value))}
+/>
+
+<FormMessage />
             </FormItem>
           )}
         />
@@ -67,7 +74,13 @@ const handleSubmit = async(values) => {
           render={({ field }) => (
             <FormItem className="flex flex-col">
               <FormLabel>Check-out Date</FormLabel>
-              <DatePicker field={field} />
+              <Input
+  type="date"
+  placeholder="Check-out Date"
+  value={field.value?.toISOString().split("T")[0] || ""}
+  onChange={(e) => field.onChange(new Date(e.target.value))}
+/>
+
               <FormMessage />
             </FormItem>
           )}

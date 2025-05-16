@@ -17,6 +17,7 @@ export default  function HotelListings() {
   const { data,isLoading, isError, error } = useGetHotelsForSearchQueryQuery({
     query: searchValue,
   });
+console.log("Hotels",searchValue);
 
   const hotels =data? data.map((hotel) =>hotel.hotel) :[];
 

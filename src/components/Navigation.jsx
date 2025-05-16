@@ -9,12 +9,12 @@ function Navigation() {
 
   //const userSlice = useSelector(state => state.user); // useSelector is a hook slice ekaka data alocate karanna puluwa
   return (
-    <nav className="z-10  bg-black flex items-center justify-between px-8 text-white py-4">
+    <nav className="z-10 bg-sky-700 flex items-center justify-between px-8 text-white py-4">
     <div className="flex items-center space-x-8">
     <p className="text-2xl font-bold ">
           Horizone </p>
       
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-6 font-bold">
           <Link to={`/`} className="transition-colors text-2xl">
             Home
           </Link>
@@ -43,7 +43,7 @@ function Navigation() {
 
         <SignedIn>
         <UserButton />
-          <Button asChild>
+          <Button asChild >
             <Link to="/account">My Account</Link>
           </Button>
         </SignedIn>

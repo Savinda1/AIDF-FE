@@ -6,17 +6,21 @@ import React from 'react'
 import Hero from '@/components/Hero';
 import HotelListings from '@/components/HotelListings';
 function HomePage() {
+  //VITE_BACKEND_URL=https://aidf-horizone-backend-amila.vercel.app,      VITE_BACKEND_URL=http://localhost:8000
+
+
   return (
     <main>
      <div className="relative min-h-screen">
         <Hero />
         <img
-          src="/assets/hero/hero_1.jpg"
+          src="/assets/hero/hero_2.png"
           alt=""
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         />
       </div>
       <HotelListings/>
+      
 
     </main>
   )
