@@ -16,13 +16,13 @@ function Hero() {
       dispatch(submit(searchQuery));//submit button eka yanawa slice ekata
   };
 return (
-    <div className=''>
+    <div className='relative z-40'>
         {/* Hero Content  */}
       <div className='z-10 relative flex flex-col items-center text-white justify-center px-8 pt-32 pb-32'>
-<h1 className="text-4xl md:text-6xl font-bold mb-8 text-center text-white">
+<h1 className="text-4xl md:text-6xl font-bold mb-8 text-center text-indigo-900">
     Find your Best Staycation
     </h1>
-    <p className="text-xl mb-12 text-center max-w-2xl  text-white"> Describe your dream destination and experience, and we'll find the
+    <p className="text-2xl mb-12 text-center max-w-2xl  text-black"> Describe your dream destination and experience, and we'll find the
     perfect place for you.
     </p>
 
@@ -35,7 +35,7 @@ className='w-full max-w-3xl bg-black/10 flex  space-x-2'>
 type="text"
 name="search"
 placeholder='Describe your destination, experience, or hotel...'
-className= 'flex-grow bg-transparent lg:text-lg  text-white placeholder:text-white/55 border-none outline-none focus:border-none focus:outline-none focus-visible:ring-0'/>
+className= 'flex-grow bg-transparent lg:text-lg  text-rose-950 placeholder:text-white/55 border-none outline-none focus:border-none focus:outline-none focus-visible:ring-0'/>
 
 <Button type="submit"
 className='rounded-full w-48 flex items-center gap-x-2 lg:h-12'

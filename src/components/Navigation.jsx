@@ -9,7 +9,7 @@ function Navigation() {
 
   //const userSlice = useSelector(state => state.user); // useSelector is a hook slice ekaka data alocate karanna puluwa
   return (
-    <nav className="z-10 bg-sky-700 flex items-center justify-between px-8 text-white py-4">
+    <nav className="z-50 bg-sky-700 flex items-center justify-between px-8 text-white py-4 fixed w-full">
     <div className="flex items-center space-x-8">
     <p className="text-2xl font-bold ">
           Horizone </p>
