@@ -60,9 +60,9 @@ function CompletePage() {
     return (
       <section
         id="success"
-        className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md my-8"
+        className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md "
       >
-        <div className="flex justify-center mb-4 text-green-600">
+        <div className="flex justify-center mb-4 text-green-600 mt-12">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-16 w-16"
