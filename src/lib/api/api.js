@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BACKEND_URL = "http://localhost:8000";//VITE_BACKEND_URL=https://aidf-horizone-backend-amila.vercel.app
+//const BACKEND_URL = "http://localhost:8000";//VITE_BACKEND_URL=https://aidf-horizone-backend-amila.vercel.app
 
 
-//const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const api = createApi({
   reducerPath: "api",
