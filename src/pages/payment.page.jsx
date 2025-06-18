@@ -20,8 +20,8 @@ function PaymentPage() {
  
 
   return (
-    <main className="container mx-auto px-4 py-8 min-h-screen">
-      <h2 className="text-4xl font-bold">Review Your Booking</h2>
+    <main className="container mx-auto px-4 py-8 min-h-screen ">
+      <h2 className="text-4xl font-bold mt-20">Review Your Booking</h2>
       <div className="mt-4">
         {console.log(booking._id)}
         <CheckoutForm bookingId={booking._id} />

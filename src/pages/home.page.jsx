@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Hero from '@/components/Hero'
+import About from '@/components/About'
 import HotelListings from '@/components/HotelListings'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -80,7 +81,7 @@ function HomePage() {
           ))}
         </div>
       </div>
-
+<About />
       <HotelListings />
     </main>
   );

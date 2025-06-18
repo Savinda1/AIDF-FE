@@ -105,16 +105,16 @@ const handleBook = async (bookingData) => {
 
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 mt-20">
         <div className="space-y-4">
           <div className="relative w-full h-[400px]">
             <img
               src={hotel.image}
               alt={hotel.name}
-              className="absolute object-cover rounded-lg"
+              className="absolute object-cover rounded-lg "
             />
           </div>
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 ">
             <Badge variant="secondary">Rooftop View</Badge>
             <Badge variant="secondary">French Cuisine</Badge>
             <Badge variant="secondary">City Center</Badge>

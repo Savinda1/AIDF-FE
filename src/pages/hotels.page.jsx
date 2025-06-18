@@ -32,7 +32,7 @@ export default function AllHotels() {
   return (
     <section className="px-8 py-8 lg:py-25">
       <div className="mb-5">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 mt-20">
           All Available Hotels
         </h2>
         <p className="text-lg text-muted-foreground">

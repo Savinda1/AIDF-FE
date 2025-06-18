@@ -14,7 +14,7 @@ const AccountPage = () => {
 
   return (
     <main className="container mx-auto px-4 py-8 min-h-screen">
-      <h1 className="text-3xl md:text-4xl font-bold">My Account</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mt-16">My Account</h1>
       <div className="mt-8">
         <h2 className="text-xl md:text-2xl font-semibold mb-4">
           Personal Information
@@ -30,7 +30,7 @@ const AccountPage = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
       {bookings?.map((booking) => (
   <MyBooking  key={booking._id} booking={booking} />
 ))}
