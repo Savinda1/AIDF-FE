@@ -42,7 +42,7 @@ const handleBook = async (bookingData) => {
     }
  navigate(`/booking/payment?bookingId=${booking.id}`);
 
-    toast.success("Booking successful");
+    toast.success("Booking successfully");
   } catch (error) {
     console.log(error);
     toast.error("Booking failed");
